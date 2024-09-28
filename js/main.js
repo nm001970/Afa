@@ -1,13 +1,4 @@
-window.onload = function() {
-    // پس از بارگذاری کامل صفحه
-    const loader = document.getElementById('loader');
-    const mainContent = document.getElementById('main-content');
 
-    // پنهان کردن پنجره لود
-    loader.style.display = 'none';
-    // نمایش محتوای اصلی
-    mainContent.style.display = 'block';
-};
 $(document).ready(function () {
     var typed = new Typed('#typed', {
         strings: [
