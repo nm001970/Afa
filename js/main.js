@@ -16,52 +16,7 @@ $(document).ready(function () {
         backDelay: 1900,
     });
 
-    // آرایه‌ای از تصاویر برای پس‌زمینه
-    const images = [
-        '../images/slid/1.webp',
-        '../images/slid/2.webp',
-        '../images/slid/3.webp',
-        '../images/slid/4.webp',
-        '../images/slid/5.webp',
-        '../images/slid/6.webp',
-        '../images/slid/7.webp',
-        '../images/slid/8.webp',
-        '../images/slid/9.webp',
-        '../images/slid/10.webp',
-        '../images/slid/11.webp',
-        '../images/slid/12.webp',
-        '../images/slid/13.webp',
-        '../images/slid/14.webp',
-        '../images/slid/15.webp',
-        '../images/slid/16.webp'
-    ];
 
-    let currentIndex = 0;
-
-    // تابع بارگذاری تصاویر به صورت همزمان
-    function preloadImages(imageArray) {
-        return Promise.all(imageArray.map(image => {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.src = image;
-                img.onload = resolve;
-            });
-        }));
-    }
-
-    // بارگذاری تصاویر و سپس شروع اسلایدها
-    preloadImages(images).then(() => {
-        changeBackground();
-        setInterval(changeBackground, 2800);
-    });
-
-    // تابع تغییر پس‌زمینه
-    function changeBackground() {
-        $('.banner-top').fadeOut(300, function() {
-            $(this).css('background-image', 'url(' + images[currentIndex] + ')').fadeIn(300);
-        });
-        currentIndex = (currentIndex + 1) % images.length;
-    }
 
     // آرایه‌ای از تصاویر برای لیست محصولات
     const imagesData = [
